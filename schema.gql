@@ -1,0 +1,459 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Address {
+  district: String!
+  id: ID!
+  objects_id: NewObject!
+  region: String!
+  street: String!
+}
+
+type Admin {
+  activation_link: String!
+  email: String!
+  fullname: String!
+  hashed_password: String!
+  hashed_refresh_token: String!
+  id: ID!
+  is_active: Boolean!
+  is_creator: Boolean!
+  phone: String!
+}
+
+type BedType {
+  bedTypes: [RoomsBedType!]!
+  id: ID!
+  name: String!
+}
+
+type Coment {
+  coment: String!
+  id: ID!
+  name: String!
+  newObjectcoments: [NewObject!]!
+}
+
+input CreateAddressDto {
+  district: String!
+  objects_id: ID!
+  region: String!
+  street: String!
+}
+
+input CreateAdminDto {
+  confirm_password: String!
+  email: String!
+  fullname: String!
+  password: String!
+  phone: String!
+}
+
+input CreateBedTypeDto {
+  name: String!
+}
+
+input CreateComentDto {
+  coment: String!
+  name: String!
+}
+
+input CreateNewObjectDto {
+  comment_id: ID!
+  location: String!
+  name: String!
+  objectPropertyFacilities_id: ID!
+  propertyType_id: ID!
+  room_id: ID!
+  specialOffer_id: ID!
+}
+
+input CreateNumberOfBedroomDto {
+  name: String!
+}
+
+input CreateObjectPropertyFacilityDto {
+  object_id: ID!
+  propertyFacilities_id: ID!
+}
+
+input CreateOrderDto {
+  day: Float!
+  payment_id: ID!
+  room_id: ID!
+}
+
+input CreatePaymentTypeDto {
+  name: String!
+}
+
+input CreatePropertyFacilityDto {
+  name: String!
+}
+
+input CreatePropertyTypeDto {
+  name: String!
+}
+
+input CreateRoomAmenityDto {
+  name: String!
+}
+
+input CreateRoomDto {
+  name: String!
+  price: Float!
+}
+
+input CreateRoomOfferDto {
+  name: String!
+}
+
+input CreateRoomsBedTypeDto {
+  bed_type_id: ID!
+  room_id: ID!
+}
+
+input CreateRoomsNumberOfBedroomDto {
+  room_id: ID!
+  room_number_bedrooms_id: ID!
+}
+
+input CreateRoomsRoomAmenityDto {
+  room_amenities_id: ID!
+  room_id: ID!
+}
+
+input CreateRoomsRoomOfferDto {
+  room_id: ID!
+  room_offers_id: ID!
+}
+
+input CreateSpecialOfferDto {
+  name: String!
+}
+
+input CreateUserDto {
+  confirm_password: String!
+  email: String!
+  name: String!
+  nickName: String!
+  password: String!
+  phone: String!
+}
+
+type Mutation {
+  createAddress(createAddress: CreateAddressDto!): Address!
+  createAdmin(createAdmin: CreateAdminDto!): Admin!
+  createBedType(createBedType: CreateBedTypeDto!): BedType!
+  createComent(createComent: CreateComentDto!): Coment!
+  createNewObject(createNewObject: CreateNewObjectDto!): NewObject!
+  createNumberOfBedroom(createNumberOfBedroom: CreateNumberOfBedroomDto!): NumberOfBedroom!
+  createObjectPropertyFacility(createObjectPropertyFacility: CreateObjectPropertyFacilityDto!): ObjectPropertyFacility!
+  createOrder(createOrder: CreateOrderDto!): Order!
+  createPaymentType(createPaymentType: CreatePaymentTypeDto!): PaymentType!
+  createPropertyFacility(createPropertyFacility: CreatePropertyFacilityDto!): PropertyFacility!
+  createPropertyType(createPropertyType: CreatePropertyTypeDto!): PropertyType!
+  createRoom(createRoom: CreateRoomDto!): Room!
+  createRoomAmenity(createRoomAmenity: CreateRoomAmenityDto!): RoomAmenity!
+  createRoomOffer(createRoomOffer: CreateRoomOfferDto!): RoomOffer!
+  createRoomsBedType(createRoomsBedType: CreateRoomsBedTypeDto!): RoomsBedType!
+  createRoomsNumberOfBedroom(createRoomsNumberOfBedroom: CreateRoomsNumberOfBedroomDto!): RoomsNumberOfBedroom!
+  createRoomsRoomAmenity(createRoomsRoomAmenity: CreateRoomsRoomAmenityDto!): RoomsRoomAmenity!
+  createRoomsRoomOffer(createRoomsRoomOffer: CreateRoomsRoomOfferDto!): RoomsRoomOffer!
+  createSpecialOffer(createSpecialOffer: CreateSpecialOfferDto!): SpecialOffer!
+  createUser(createUser: CreateUserDto!): User!
+  removeAddress(id: ID!): Address!
+  removeBedType(id: ID!): BedType!
+  removeComent(id: ID!): Coment!
+  removeNewObject(id: ID!): NewObject!
+  removeNumberOfBedroom(id: ID!): NumberOfBedroom!
+  removeObjectPropertyFacility(id: ID!): ObjectPropertyFacility!
+  removeOrder(id: ID!): Order!
+  removePaymentType(id: ID!): PaymentType!
+  removePropertyFacility(id: ID!): PropertyFacility!
+  removePropertyType(id: ID!): PropertyType!
+  removeRoom(id: ID!): Room!
+  removeRoomAmenity(id: ID!): RoomAmenity!
+  removeRoomOffer(id: ID!): RoomOffer!
+  removeRoomsBedType(id: ID!): RoomsBedType!
+  removeRoomsNumberOfBedroom(id: ID!): RoomsNumberOfBedroom!
+  removeRoomsRoomAmenity(id: ID!): RoomsRoomAmenity!
+  removeRoomsRoomOffer(id: ID!): RoomsRoomOffer!
+  removeSpecialOffer(id: ID!): SpecialOffer!
+  removeadmin(id: ID!): User!
+  updateAddress(id: ID!, updateAddress: UpdateAddressDto!): Address!
+  updateBedType(id: ID!, updateBedType: UpdateBedTypeDto!): BedType!
+  updateComent(id: ID!, updateComent: UpdateComentDto!): Coment!
+  updateNewObject(id: ID!, updateNewObject: UpdateNewObjectDto!): NewObject!
+  updateNumberOfBedroom(id: ID!, updateNumberOfBedroom: UpdateNumberOfBedroomDto!): NumberOfBedroom!
+  updateObjectPropertyFacility(id: ID!, updateObjectPropertyFacility: UpdateObjectPropertyFacilityDto!): ObjectPropertyFacility!
+  updateOrder(id: ID!, updateOrder: UpdateOrderDto!): Order!
+  updatePaymentType(id: ID!, updatePaymentType: UpdatePaymentTypeDto!): PaymentType!
+  updatePropertyFacility(id: ID!, updatePropertyFacility: UpdatePropertyFacilityDto!): PropertyFacility!
+  updatePropertyType(id: ID!, updatePropertyType: UpdatePropertyTypeDto!): PropertyType!
+  updateRoom(id: ID!, updateRoom: UpdateRoomDto!): Room!
+  updateRoomOffer(id: ID!, updateRoomOffer: UpdateRoomOfferDto!): RoomOffer!
+  updateRoomsBedType(id: ID!, updateRoomsBedType: UpdateRoomsBedTypeDto!): RoomsBedType!
+  updateRoomsNumberOfBedroom(id: ID!, updateRoomsNumberOfBedroom: UpdateRoomsNumberOfBedroomDto!): RoomsNumberOfBedroom!
+  updateRoomsRoomAmenity(id: ID!, updateRoomsRoomAmenity: UpdateRoomsRoomAmenityDto!): RoomsRoomAmenity!
+  updateRoomsRoomOffer(id: ID!, updateRoomsRoomOffer: UpdateRoomsRoomOfferDto!): RoomsRoomOffer!
+  updateSpecialOffer(id: ID!, updateSpecialOffer: UpdateSpecialOfferDto!): SpecialOffer!
+  updateadmin(id: ID!, updateadmin: UpdateUserDto!): User!
+}
+
+type NewObject {
+  comment_id: Coment!
+  id: ID!
+  location: String!
+  name: String!
+  objectAddress: [Address!]!
+  objectPropertyFac: [ObjectPropertyFacility!]!
+  propertyType_id: PropertyType!
+  room_id: Room!
+  specialOffer_id: SpecialOffer!
+}
+
+type NumberOfBedroom {
+  id: ID!
+  name: String!
+  numbersOfBedroms: [RoomsNumberOfBedroom!]!
+}
+
+type ObjectPropertyFacility {
+  id: ID!
+  object_id: NewObject!
+  propertyFacilities_id: PropertyFacility!
+}
+
+type Order {
+  day: Float!
+  id: ID!
+  payment_id: PaymentType!
+  room_id: Room!
+  total_price: Float!
+}
+
+type PaymentType {
+  id: ID!
+  name: String!
+  paymentTypes: [Order!]!
+}
+
+type PropertyFacility {
+  id: ID!
+  name: String!
+  objectProperties: [ObjectPropertyFacility!]!
+}
+
+type PropertyType {
+  id: ID!
+  name: String!
+  newObject: [NewObject!]!
+}
+
+type Query {
+  NumberOfBedroomfindAll: [NumberOfBedroom!]!
+  findAllAddress: [Address!]!
+  findAllBedType: [BedType!]!
+  findAllComent: [Coment!]!
+  findAllNewObject: [NewObject!]!
+  findAllObjectPropertyFacility: [ObjectPropertyFacility!]!
+  findAllOrder: [Order!]!
+  findAllPaymentType: [PaymentType!]!
+  findAllPropertyFacility: [PropertyFacility!]!
+  findAllPropertyType: [PropertyType!]!
+  findAllRoom: [Room!]!
+  findAllRoomAmenity: [RoomAmenity!]!
+  findAllRoomOffer: [RoomOffer!]!
+  findAllRoomsBedType: [RoomsBedType!]!
+  findAllRoomsNumberOfBedroom: [RoomsNumberOfBedroom!]!
+  findAllRoomsRoomAmenity: [RoomsRoomAmenity!]!
+  findAllRoomsRoomOffer: [RoomsRoomOffer!]!
+  findAllSpecialOffer: [SpecialOffer!]!
+  findAlladmin: [User!]!
+  findOneAddress(id: ID!): Address!
+  findOneBedType(id: ID!): BedType!
+  findOneComent(id: ID!): Coment!
+  findOneNewObject(id: ID!): NewObject!
+  findOneNumberOfBedroom(id: ID!): NumberOfBedroom!
+  findOneObjectPropertyFacility(id: ID!): ObjectPropertyFacility!
+  findOneOrder(id: ID!): Order!
+  findOnePaymentType(id: ID!): PaymentType!
+  findOnePropertyFacility(id: ID!): PropertyFacility!
+  findOnePropertyType(id: ID!): PropertyType!
+  findOneRoom(id: ID!): Room!
+  findOneRoomAmenity(id: ID!): RoomAmenity!
+  findOneRoomOffer(id: ID!): RoomOffer!
+  findOneRoomsBedType(id: ID!): RoomsBedType!
+  findOneRoomsNumberOfBedroom(id: ID!): RoomsNumberOfBedroom!
+  findOneRoomsRoomAmenity(id: ID!): RoomsRoomAmenity!
+  findOneRoomsRoomOffer(id: ID!): RoomsRoomOffer!
+  findOneSpecialOffer(id: ID!): SpecialOffer!
+  findOneadmin(id: ID!): User!
+  updateRoomAmenity(id: ID!, updateRoomAmenity: UpdateRoomAmenityDto!): RoomAmenity!
+}
+
+type Room {
+  id: ID!
+  name: String!
+  newObjectroom: [NewObject!]!
+  price: Float!
+  roomAmenties: [RoomsRoomAmenity!]!
+  roomOrders: [Order!]!
+  roomRoomOffers: [RoomsRoomOffer!]!
+  roomsBedTypes: [RoomsBedType!]!
+  roomsNumberOfBedrooms: [RoomsNumberOfBedroom!]!
+}
+
+type RoomAmenity {
+  amenitiesRooms: [RoomsRoomAmenity!]!
+  id: ID!
+  name: String!
+}
+
+type RoomOffer {
+  id: ID!
+  name: String!
+  offersRoom: [RoomsRoomOffer!]!
+}
+
+type RoomsBedType {
+  bed_type_id: BedType!
+  id: ID!
+  room_id: Room!
+}
+
+type RoomsNumberOfBedroom {
+  id: ID!
+  room_id: Room!
+  room_number_bedrooms_id: NumberOfBedroom!
+}
+
+type RoomsRoomAmenity {
+  id: ID!
+  room_amenities_id: RoomAmenity!
+  room_id: Room!
+}
+
+type RoomsRoomOffer {
+  id: ID!
+  room_id: Room!
+  room_offers_id: RoomOffer!
+}
+
+type SpecialOffer {
+  id: ID!
+  name: String!
+  newObjects: [NewObject!]!
+}
+
+input UpdateAddressDto {
+  district: String
+  objects_id: ID
+  region: String
+  street: String
+}
+
+input UpdateBedTypeDto {
+  name: String
+}
+
+input UpdateComentDto {
+  coment: String
+  name: String
+}
+
+input UpdateNewObjectDto {
+  comment_id: ID
+  location: String
+  name: String
+  objectPropertyFacilities_id: ID
+  propertyType_id: ID
+  room_id: ID
+  specialOffer_id: ID
+}
+
+input UpdateNumberOfBedroomDto {
+  name: String
+}
+
+input UpdateObjectPropertyFacilityDto {
+  object_id: ID
+  propertyFacilities_id: ID
+}
+
+input UpdateOrderDto {
+  day: Float
+  payment_id: ID
+  room_id: ID
+}
+
+input UpdatePaymentTypeDto {
+  name: String
+}
+
+input UpdatePropertyFacilityDto {
+  name: String
+}
+
+input UpdatePropertyTypeDto {
+  name: String
+}
+
+input UpdateRoomAmenityDto {
+  name: String
+}
+
+input UpdateRoomDto {
+  name: String
+  price: Float
+}
+
+input UpdateRoomOfferDto {
+  name: String
+}
+
+input UpdateRoomsBedTypeDto {
+  bed_type_id: ID
+  room_id: ID
+}
+
+input UpdateRoomsNumberOfBedroomDto {
+  room_id: ID
+  room_number_bedrooms_id: ID
+}
+
+input UpdateRoomsRoomAmenityDto {
+  room_amenities_id: ID
+  room_id: ID
+}
+
+input UpdateRoomsRoomOfferDto {
+  room_id: ID
+  room_offers_id: ID
+}
+
+input UpdateSpecialOfferDto {
+  name: String
+}
+
+input UpdateUserDto {
+  confirm_new_password: String
+  email: String
+  name: String
+  new_password: String
+  nickName: String
+  password: String
+  phone: String
+}
+
+type User {
+  email: String!
+  hashed_password: String!
+  hashed_refresh_token: String!
+  id: ID!
+  name: String!
+  nickName: String!
+  phone: String!
+}
