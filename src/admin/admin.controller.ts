@@ -17,7 +17,7 @@ import { SelfAdminGuard } from 'src/common/guards/selfadmin.guard';
 export class AdminController {
   constructor(private readonly adminService: AdminService) {}
 
- @UseGuards(AdminCreatorGuard)
+//  @UseGuards(AdminCreatorGuard)
   @HttpCode(201)
   @ApiOperation({ summary: 'create Admin'})
   @ApiResponse({ status: 201, type: Admin })
